@@ -5,11 +5,14 @@ A comprehensive, interactive Unix/Linux learning system that takes you from fund
 ## Quick Start
 
 ```bash
-# Make the script executable (already done)
-chmod +x unix_mastery_course.sh
-
-# Launch the course
+# Launch the main course (fundamentals to advanced)
 ./unix_mastery_course.sh
+
+# Launch the expert's arsenal (really advanced stuff)
+./unix_expert_arsenal.sh
+
+# Quick launcher
+./start_course.sh
 ```
 
 ## Course Structure
@@ -176,3 +179,64 @@ Launch the course and begin your path to Unix mastery:
 ```
 
 Welcome to the world of Unix!
+
+## Expert's Arsenal - The Really Advanced Stuff
+
+For those who want to go beyond the main course, we've included `unix_expert_arsenal.sh` with truly advanced Unix techniques that most tutorials don't cover:
+
+### Advanced Topics Include:
+
+**1. Process & Memory Forensics**
+- Direct memory dumps from running processes
+- Advanced strace/ltrace filtering
+- Process injection techniques
+- Memory analysis with gcore and /proc
+
+**2. Kernel-Level Operations**
+- eBPF tracing and profiling
+- Kernel module manipulation
+- Direct hardware access via /dev/mem
+- System call tracing
+
+**3. File System Internals**
+- debugfs for ext4 forensics
+- Inode manipulation
+- Data recovery from damaged filesystems
+- FUSE filesystem creation
+
+**4. Network Deep Dive**
+- Advanced tcpdump filters for packet analysis
+- Network namespace manipulation
+- Traffic control with tc
+- iptables/nftables advanced rules
+
+**5. Performance Profiling**
+- perf for CPU profiling
+- Flame graph generation
+- Valgrind suite for memory analysis
+- System-wide tracing with SystemTap
+
+**6. Advanced Text Processing**
+- Complex AWK programming
+- Multi-line sed operations
+- Binary file manipulation
+- Parallel text processing
+
+**7. Security & Cryptography**
+- SELinux/AppArmor management
+- File integrity monitoring
+- Advanced encryption with OpenSSL
+- Audit system configuration
+
+**8. System Recovery**
+- Boot loader recovery
+- chroot rescue operations
+- File system repair
+- Data recovery tools
+
+**9. One-Liner Hall of Fame**
+- The most powerful Unix one-liners
+- Complex operations in single commands
+- Real-world problem solvers
+
+These are the commands and techniques that separate Unix experts from intermediate users - the kind of knowledge that takes years to accumulate through experience.
