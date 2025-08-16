@@ -957,9 +957,9 @@ signal_reference() {
     echo
     
     echo -e "${BOLD}Usage Examples:${NC}"
-    echo "• ${CYAN}kill -l${NC}              - List all signals"
-    echo "• ${CYAN}kill -HUP \$(pidof process)${NC} - Send SIGHUP"
-    echo "• ${CYAN}trap 'echo Caught' SIGINT${NC}  - Catch signal in script"
+    echo -e "• ${CYAN}kill -l${NC}              - List all signals"
+    echo -e "• ${CYAN}kill -HUP \$(pidof process)${NC} - Send SIGHUP"
+    echo -e "• ${CYAN}trap 'echo Caught' SIGINT${NC}  - Catch signal in script"
     echo
     
     update_progress "module3" 75
@@ -1045,19 +1045,19 @@ EOF
     echo -e "${BOLD}Lesson 2: Variables${NC}"
     echo
     echo "Variable types:"
-    echo "• ${CYAN}VAR=value${NC}        - Regular variable"
-    echo "• ${CYAN}readonly VAR${NC}     - Read-only variable"
-    echo "• ${CYAN}export VAR${NC}       - Environment variable"
-    echo "• ${CYAN}local VAR${NC}        - Local to function"
+    echo -e "• ${CYAN}VAR=value${NC}        - Regular variable"
+    echo -e "• ${CYAN}readonly VAR${NC}     - Read-only variable"
+    echo -e "• ${CYAN}export VAR${NC}       - Environment variable"
+    echo -e "• ${CYAN}local VAR${NC}        - Local to function"
     echo
     echo "Special variables:"
-    echo "• ${CYAN}\$0${NC}   - Script name"
-    echo "• ${CYAN}\$1-9${NC} - Arguments 1-9"
-    echo "• ${CYAN}\$#${NC}   - Number of arguments"
-    echo "• ${CYAN}\$@${NC}   - All arguments"
-    echo "• ${CYAN}\$?${NC}   - Exit status of last command"
-    echo "• ${CYAN}\$\$${NC}   - Process ID"
-    echo "• ${CYAN}\$!${NC}   - PID of last background process"
+    echo -e "• ${CYAN}\$0${NC}   - Script name"
+    echo -e "• ${CYAN}\$1-9${NC} - Arguments 1-9"
+    echo -e "• ${CYAN}\$#${NC}   - Number of arguments"
+    echo -e "• ${CYAN}\$@${NC}   - All arguments"
+    echo -e "• ${CYAN}\$?${NC}   - Exit status of last command"
+    echo -e "• ${CYAN}\$\$${NC}   - Process ID"
+    echo -e "• ${CYAN}\$!${NC}   - PID of last background process"
     echo
     read -p "Press Enter to continue..."
     
