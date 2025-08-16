@@ -1,8 +1,0 @@
-web01.example.com:80:active
-web02.example.com:80:active
-db01.example.com:3306:active
-db02.example.com:3306:maintenance
-cache01.example.com:6379:active
-app01.example.com:8080:active
-app02.example.com:8080:inactive
-mail01.example.com:25:active
