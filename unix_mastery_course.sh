@@ -200,10 +200,10 @@ module1_tutorial() {
     echo -e "${BOLD}Lesson 1: Unix Philosophy${NC}"
     echo
     echo "Unix follows several key principles:"
-    echo "• ${GREEN}Do one thing well${NC} - Each tool should do one specific task excellently"
-    echo "• ${GREEN}Everything is a file${NC} - Devices, processes, and data are all files"
-    echo "• ${GREEN}Small is beautiful${NC} - Simple tools can be combined for complex tasks"
-    echo "• ${GREEN}Plain text${NC} - Configuration and data in human-readable format"
+    echo -e "• ${GREEN}Do one thing well${NC} - Each tool should do one specific task excellently"
+    echo -e "• ${GREEN}Everything is a file${NC} - Devices, processes, and data are all files"
+    echo -e "• ${GREEN}Small is beautiful${NC} - Simple tools can be combined for complex tasks"
+    echo -e "• ${GREEN}Plain text${NC} - Configuration and data in human-readable format"
     echo
     read -p "Press Enter to continue..."
     
@@ -233,15 +233,15 @@ module1_tutorial() {
     echo -e "${BOLD}Lesson 3: Navigation Commands${NC}"
     echo
     echo "Essential navigation commands:"
-    echo "• ${CYAN}pwd${NC}  - Print Working Directory (where you are)"
-    echo "• ${CYAN}cd${NC}   - Change Directory"
-    echo "• ${CYAN}ls${NC}   - List directory contents"
+    echo -e "• ${CYAN}pwd${NC}  - Print Working Directory (where you are)"
+    echo -e "• ${CYAN}cd${NC}   - Change Directory"
+    echo -e "• ${CYAN}ls${NC}   - List directory contents"
     echo
     echo "Special directories:"
-    echo "• ${CYAN}.${NC}    - Current directory"
-    echo "• ${CYAN}..${NC}   - Parent directory"
-    echo "• ${CYAN}~${NC}    - Home directory"
-    echo "• ${CYAN}/${NC}    - Root directory"
+    echo -e "• ${CYAN}.${NC}    - Current directory"
+    echo -e "• ${CYAN}..${NC}   - Parent directory"
+    echo -e "• ${CYAN}~${NC}    - Home directory"
+    echo -e "• ${CYAN}/${NC}    - Root directory"
     echo
     echo -e "${BOLD}Practice:${NC}"
     echo "Your current directory is:"
@@ -253,12 +253,12 @@ module1_tutorial() {
     echo -e "${BOLD}Lesson 4: Getting Help${NC}"
     echo
     echo "Unix provides multiple help systems:"
-    echo "• ${CYAN}man command${NC}     - Manual pages (most comprehensive)"
-    echo "• ${CYAN}command --help${NC}  - Quick help"
-    echo "• ${CYAN}info command${NC}    - GNU info pages"
-    echo "• ${CYAN}apropos keyword${NC} - Search for commands"
-    echo "• ${CYAN}which command${NC}   - Find command location"
-    echo "• ${CYAN}type command${NC}    - Show command type"
+    echo -e "• ${CYAN}man command${NC}     - Manual pages (most comprehensive)"
+    echo -e "• ${CYAN}command --help${NC}  - Quick help"
+    echo -e "• ${CYAN}info command${NC}    - GNU info pages"
+    echo -e "• ${CYAN}apropos keyword${NC} - Search for commands"
+    echo -e "• ${CYAN}which command${NC}   - Find command location"
+    echo -e "• ${CYAN}type command${NC}    - Show command type"
     echo
     echo "Man page sections:"
     echo "1 - User commands"
@@ -273,17 +273,17 @@ module1_tutorial() {
     echo -e "${BOLD}Lesson 5: Input/Output Redirection${NC}"
     echo
     echo "Three standard streams:"
-    echo "• ${CYAN}stdin${NC}  (0) - Standard input"
-    echo "• ${CYAN}stdout${NC} (1) - Standard output"
-    echo "• ${CYAN}stderr${NC} (2) - Standard error"
+    echo -e "• ${CYAN}stdin${NC}  (0) - Standard input"
+    echo -e "• ${CYAN}stdout${NC} (1) - Standard output"
+    echo -e "• ${CYAN}stderr${NC} (2) - Standard error"
     echo
     echo "Redirection operators:"
-    echo "• ${CYAN}>${NC}   - Redirect output (overwrites)"
-    echo "• ${CYAN}>>${NC}  - Append output"
-    echo "• ${CYAN}<${NC}   - Redirect input"
-    echo "• ${CYAN}2>${NC}  - Redirect errors"
-    echo "• ${CYAN}&>${NC}  - Redirect all output"
-    echo "• ${CYAN}|${NC}   - Pipe output to another command"
+    echo -e "• ${CYAN}>${NC}   - Redirect output (overwrites)"
+    echo -e "• ${CYAN}>>${NC}  - Append output"
+    echo -e "• ${CYAN}<${NC}   - Redirect input"
+    echo -e "• ${CYAN}2>${NC}  - Redirect errors"
+    echo -e "• ${CYAN}&>${NC}  - Redirect all output"
+    echo -e "• ${CYAN}|${NC}   - Pipe output to another command"
     echo
     echo "Examples:"
     echo "  ls > files.txt        # Save file list"
@@ -510,26 +510,26 @@ module2_tutorial() {
     echo -e "${BOLD}Lesson 1: Unix File Types${NC}"
     echo
     echo "Unix has 7 file types (shown by ls -l first character):"
-    echo "• ${CYAN}-${NC}  Regular file"
-    echo "• ${CYAN}d${NC}  Directory"
-    echo "• ${CYAN}l${NC}  Symbolic link"
-    echo "• ${CYAN}c${NC}  Character device"
-    echo "• ${CYAN}b${NC}  Block device"
-    echo "• ${CYAN}p${NC}  Named pipe (FIFO)"
-    echo "• ${CYAN}s${NC}  Socket"
+    echo -e "• ${CYAN}-${NC}  Regular file"
+    echo -e "• ${CYAN}d${NC}  Directory"
+    echo -e "• ${CYAN}l${NC}  Symbolic link"
+    echo -e "• ${CYAN}c${NC}  Character device"
+    echo -e "• ${CYAN}b${NC}  Block device"
+    echo -e "• ${CYAN}p${NC}  Named pipe (FIFO)"
+    echo -e "• ${CYAN}s${NC}  Socket"
     echo
     read -p "Press Enter to continue..."
     
     echo
     echo -e "${BOLD}Lesson 2: File Permissions${NC}"
     echo
-    echo "Permission format: ${CYAN}rwxrwxrwx${NC}"
-    echo "Three groups: ${GREEN}owner${NC} ${YELLOW}group${NC} ${MAGENTA}others${NC}"
+    echo -e "Permission format: ${CYAN}rwxrwxrwx${NC}"
+    echo -e "Three groups: ${GREEN}owner${NC} ${YELLOW}group${NC} ${MAGENTA}others${NC}"
     echo
     echo "Permission values:"
-    echo "• ${CYAN}r${NC} (read)    = 4"
-    echo "• ${CYAN}w${NC} (write)   = 2"
-    echo "• ${CYAN}x${NC} (execute) = 1"
+    echo -e "• ${CYAN}r${NC} (read)    = 4"
+    echo -e "• ${CYAN}w${NC} (write)   = 2"
+    echo -e "• ${CYAN}x${NC} (execute) = 1"
     echo
     echo "Common permissions:"
     echo "• 755 = rwxr-xr-x (typical for executables)"
@@ -537,10 +537,10 @@ module2_tutorial() {
     echo "• 700 = rwx------ (private to owner)"
     echo
     echo "Commands:"
-    echo "• ${CYAN}chmod 755 file${NC}      - Set permissions"
-    echo "• ${CYAN}chmod u+x file${NC}      - Add execute for owner"
-    echo "• ${CYAN}chmod go-w file${NC}     - Remove write for group/others"
-    echo "• ${CYAN}chown user:group file${NC} - Change ownership"
+    echo -e "• ${CYAN}chmod 755 file${NC}      - Set permissions"
+    echo -e "• ${CYAN}chmod u+x file${NC}      - Add execute for owner"
+    echo -e "• ${CYAN}chmod go-w file${NC}     - Remove write for group/others"
+    echo -e "• ${CYAN}chown user:group file${NC} - Change ownership"
     echo
     read -p "Press Enter to continue..."
     
@@ -552,14 +552,14 @@ module2_tutorial() {
     echo "• Cannot span filesystems"
     echo "• Cannot link directories"
     echo "• Original and link are equal"
-    echo "• ${CYAN}ln source hardlink${NC}"
+    echo -e "• ${CYAN}ln source hardlink${NC}"
     echo
     echo -e "${GREEN}Symbolic Links:${NC}"
     echo "• Point to pathname"
     echo "• Can span filesystems"
     echo "• Can link directories"
     echo "• Clearly shows target"
-    echo "• ${CYAN}ln -s source symlink${NC}"
+    echo -e "• ${CYAN}ln -s source symlink${NC}"
     echo
     read -p "Press Enter to continue..."
     
@@ -567,17 +567,17 @@ module2_tutorial() {
     echo -e "${BOLD}Lesson 4: Finding Files${NC}"
     echo
     echo -e "${GREEN}find command:${NC}"
-    echo "• ${CYAN}find /path -name '*.txt'${NC}     - By name"
-    echo "• ${CYAN}find . -type d${NC}               - Find directories"
-    echo "• ${CYAN}find . -size +10M${NC}            - Files over 10MB"
-    echo "• ${CYAN}find . -mtime -7${NC}             - Modified in last 7 days"
-    echo "• ${CYAN}find . -user username${NC}        - By owner"
-    echo "• ${CYAN}find . -perm 755${NC}             - By permissions"
-    echo "• ${CYAN}find . -exec cmd {} \\;${NC}       - Execute command"
+    echo -e "• ${CYAN}find /path -name '*.txt'${NC}     - By name"
+    echo -e "• ${CYAN}find . -type d${NC}               - Find directories"
+    echo -e "• ${CYAN}find . -size +10M${NC}            - Files over 10MB"
+    echo -e "• ${CYAN}find . -mtime -7${NC}             - Modified in last 7 days"
+    echo -e "• ${CYAN}find . -user username${NC}        - By owner"
+    echo -e "• ${CYAN}find . -perm 755${NC}             - By permissions"
+    echo -e "• ${CYAN}find . -exec cmd {} \\;${NC}       - Execute command"
     echo
     echo -e "${GREEN}locate command:${NC}"
-    echo "• ${CYAN}locate filename${NC}              - Fast database search"
-    echo "• ${CYAN}updatedb${NC}                     - Update locate database"
+    echo -e "• ${CYAN}locate filename${NC}              - Fast database search"
+    echo -e "• ${CYAN}updatedb${NC}                     - Update locate database"
     echo
     
     update_progress "module2" 50
@@ -807,17 +807,17 @@ module3_tutorial() {
     echo -e "${BOLD}Lesson 1: Process Basics${NC}"
     echo
     echo "Every process has:"
-    echo "• ${CYAN}PID${NC}   - Process ID (unique identifier)"
-    echo "• ${CYAN}PPID${NC}  - Parent Process ID"
-    echo "• ${CYAN}UID${NC}   - User ID of owner"
-    echo "• ${CYAN}State${NC} - Running, Sleeping, Stopped, Zombie"
+    echo -e "• ${CYAN}PID${NC}   - Process ID (unique identifier)"
+    echo -e "• ${CYAN}PPID${NC}  - Parent Process ID"
+    echo -e "• ${CYAN}UID${NC}   - User ID of owner"
+    echo -e "• ${CYAN}State${NC} - Running, Sleeping, Stopped, Zombie"
     echo
     echo "Process states:"
-    echo "• ${GREEN}R${NC} - Running or runnable"
-    echo "• ${YELLOW}S${NC} - Sleeping (waiting for event)"
-    echo "• ${CYAN}D${NC} - Uninterruptible sleep"
-    echo "• ${MAGENTA}T${NC} - Stopped (suspended)"
-    echo "• ${RED}Z${NC} - Zombie (terminated but not reaped)"
+    echo -e "• ${GREEN}R${NC} - Running or runnable"
+    echo -e "• ${YELLOW}S${NC} - Sleeping (waiting for event)"
+    echo -e "• ${CYAN}D${NC} - Uninterruptible sleep"
+    echo -e "• ${MAGENTA}T${NC} - Stopped (suspended)"
+    echo -e "• ${RED}Z${NC} - Zombie (terminated but not reaped)"
     echo
     read -p "Press Enter to continue..."
     
@@ -825,16 +825,16 @@ module3_tutorial() {
     echo -e "${BOLD}Lesson 2: Viewing Processes${NC}"
     echo
     echo -e "${GREEN}ps command options:${NC}"
-    echo "• ${CYAN}ps${NC}         - Your processes"
-    echo "• ${CYAN}ps aux${NC}     - All processes (BSD style)"
-    echo "• ${CYAN}ps -ef${NC}     - All processes (System V style)"
-    echo "• ${CYAN}ps -ejH${NC}    - Process tree"
-    echo "• ${CYAN}ps -eo pid,ppid,cmd,%mem,%cpu${NC} - Custom format"
+    echo -e "• ${CYAN}ps${NC}         - Your processes"
+    echo -e "• ${CYAN}ps aux${NC}     - All processes (BSD style)"
+    echo -e "• ${CYAN}ps -ef${NC}     - All processes (System V style)"
+    echo -e "• ${CYAN}ps -ejH${NC}    - Process tree"
+    echo -e "• ${CYAN}ps -eo pid,ppid,cmd,%mem,%cpu${NC} - Custom format"
     echo
     echo -e "${GREEN}Real-time monitoring:${NC}"
-    echo "• ${CYAN}top${NC}        - Interactive process viewer"
-    echo "• ${CYAN}htop${NC}       - Enhanced top (if installed)"
-    echo "• ${CYAN}pstree${NC}     - Process tree visualization"
+    echo -e "• ${CYAN}top${NC}        - Interactive process viewer"
+    echo -e "• ${CYAN}htop${NC}       - Enhanced top (if installed)"
+    echo -e "• ${CYAN}pstree${NC}     - Process tree visualization"
     echo
     read -p "Press Enter to continue..."
     
@@ -842,19 +842,19 @@ module3_tutorial() {
     echo -e "${BOLD}Lesson 3: Process Signals${NC}"
     echo
     echo "Common signals:"
-    echo "• ${CYAN}SIGHUP${NC}  (1)  - Hangup, reload configuration"
-    echo "• ${CYAN}SIGINT${NC}  (2)  - Interrupt (Ctrl+C)"
-    echo "• ${CYAN}SIGQUIT${NC} (3)  - Quit (Ctrl+\\)"
-    echo "• ${CYAN}SIGKILL${NC} (9)  - Force kill (cannot be caught)"
-    echo "• ${CYAN}SIGTERM${NC} (15) - Terminate gracefully (default)"
-    echo "• ${CYAN}SIGSTOP${NC} (19) - Stop process (Ctrl+Z)"
-    echo "• ${CYAN}SIGCONT${NC} (18) - Continue stopped process"
+    echo -e "• ${CYAN}SIGHUP${NC}  (1)  - Hangup, reload configuration"
+    echo -e "• ${CYAN}SIGINT${NC}  (2)  - Interrupt (Ctrl+C)"
+    echo -e "• ${CYAN}SIGQUIT${NC} (3)  - Quit (Ctrl+\\)"
+    echo -e "• ${CYAN}SIGKILL${NC} (9)  - Force kill (cannot be caught)"
+    echo -e "• ${CYAN}SIGTERM${NC} (15) - Terminate gracefully (default)"
+    echo -e "• ${CYAN}SIGSTOP${NC} (19) - Stop process (Ctrl+Z)"
+    echo -e "• ${CYAN}SIGCONT${NC} (18) - Continue stopped process"
     echo
     echo "Sending signals:"
-    echo "• ${CYAN}kill PID${NC}         - Send SIGTERM"
-    echo "• ${CYAN}kill -9 PID${NC}      - Force kill"
-    echo "• ${CYAN}killall name${NC}     - Kill by name"
-    echo "• ${CYAN}pkill pattern${NC}    - Kill by pattern"
+    echo -e "• ${CYAN}kill PID${NC}         - Send SIGTERM"
+    echo -e "• ${CYAN}kill -9 PID${NC}      - Force kill"
+    echo -e "• ${CYAN}killall name${NC}     - Kill by name"
+    echo -e "• ${CYAN}pkill pattern${NC}    - Kill by pattern"
     echo
     read -p "Press Enter to continue..."
     
@@ -862,17 +862,17 @@ module3_tutorial() {
     echo -e "${BOLD}Lesson 4: Job Control${NC}"
     echo
     echo "Background/Foreground:"
-    echo "• ${CYAN}command &${NC}         - Run in background"
-    echo "• ${CYAN}Ctrl+Z${NC}           - Suspend current job"
-    echo "• ${CYAN}jobs${NC}             - List jobs"
-    echo "• ${CYAN}bg %1${NC}            - Resume job 1 in background"
-    echo "• ${CYAN}fg %1${NC}            - Bring job 1 to foreground"
-    echo "• ${CYAN}disown %1${NC}        - Detach job from shell"
-    echo "• ${CYAN}nohup command &${NC}  - Run immune to hangups"
+    echo -e "• ${CYAN}command &${NC}         - Run in background"
+    echo -e "• ${CYAN}Ctrl+Z${NC}           - Suspend current job"
+    echo -e "• ${CYAN}jobs${NC}             - List jobs"
+    echo -e "• ${CYAN}bg %1${NC}            - Resume job 1 in background"
+    echo -e "• ${CYAN}fg %1${NC}            - Bring job 1 to foreground"
+    echo -e "• ${CYAN}disown %1${NC}        - Detach job from shell"
+    echo -e "• ${CYAN}nohup command &${NC}  - Run immune to hangups"
     echo
     echo "Process priority:"
-    echo "• ${CYAN}nice -n 10 command${NC}  - Start with lower priority"
-    echo "• ${CYAN}renice 10 PID${NC}       - Change priority"
+    echo -e "• ${CYAN}nice -n 10 command${NC}  - Start with lower priority"
+    echo -e "• ${CYAN}renice 10 PID${NC}       - Change priority"
     echo "• Priority range: -20 (highest) to 19 (lowest)"
     echo
     
@@ -1108,27 +1108,27 @@ EOF
     echo -e "${BOLD}Lesson 4: Test Conditions${NC}"
     echo
     echo "File tests:"
-    echo "• ${CYAN}-e file${NC}   - File exists"
-    echo "• ${CYAN}-f file${NC}   - Regular file"
-    echo "• ${CYAN}-d file${NC}   - Directory"
-    echo "• ${CYAN}-r file${NC}   - Readable"
-    echo "• ${CYAN}-w file${NC}   - Writable"
-    echo "• ${CYAN}-x file${NC}   - Executable"
-    echo "• ${CYAN}-s file${NC}   - File not empty"
+    echo -e "• ${CYAN}-e file${NC}   - File exists"
+    echo -e "• ${CYAN}-f file${NC}   - Regular file"
+    echo -e "• ${CYAN}-d file${NC}   - Directory"
+    echo -e "• ${CYAN}-r file${NC}   - Readable"
+    echo -e "• ${CYAN}-w file${NC}   - Writable"
+    echo -e "• ${CYAN}-x file${NC}   - Executable"
+    echo -e "• ${CYAN}-s file${NC}   - File not empty"
     echo
     echo "String tests:"
-    echo "• ${CYAN}-z string${NC}      - String is empty"
-    echo "• ${CYAN}-n string${NC}      - String is not empty"
-    echo "• ${CYAN}str1 = str2${NC}   - Strings are equal"
-    echo "• ${CYAN}str1 != str2${NC}  - Strings are not equal"
+    echo -e "• ${CYAN}-z string${NC}      - String is empty"
+    echo -e "• ${CYAN}-n string${NC}      - String is not empty"
+    echo -e "• ${CYAN}str1 = str2${NC}   - Strings are equal"
+    echo -e "• ${CYAN}str1 != str2${NC}  - Strings are not equal"
     echo
     echo "Numeric tests:"
-    echo "• ${CYAN}-eq${NC}  - Equal"
-    echo "• ${CYAN}-ne${NC}  - Not equal"
-    echo "• ${CYAN}-gt${NC}  - Greater than"
-    echo "• ${CYAN}-lt${NC}  - Less than"
-    echo "• ${CYAN}-ge${NC}  - Greater or equal"
-    echo "• ${CYAN}-le${NC}  - Less or equal"
+    echo -e "• ${CYAN}-eq${NC}  - Equal"
+    echo -e "• ${CYAN}-ne${NC}  - Not equal"
+    echo -e "• ${CYAN}-gt${NC}  - Greater than"
+    echo -e "• ${CYAN}-lt${NC}  - Less than"
+    echo -e "• ${CYAN}-ge${NC}  - Greater or equal"
+    echo -e "• ${CYAN}-le${NC}  - Less or equal"
     echo
     
     update_progress "module4" 50
@@ -1434,24 +1434,24 @@ debugging_workshop() {
     
     echo -e "${BOLD}Debugging Techniques:${NC}"
     echo
-    echo "1. ${GREEN}Debug modes:${NC}"
-    echo "   • ${CYAN}bash -x script.sh${NC}     - Print commands as executed"
-    echo "   • ${CYAN}bash -v script.sh${NC}     - Print script lines as read"
-    echo "   • ${CYAN}bash -n script.sh${NC}     - Check syntax only"
+    echo -e "1. ${GREEN}Debug modes:${NC}"
+    echo -e "   • ${CYAN}bash -x script.sh${NC}     - Print commands as executed"
+    echo -e "   • ${CYAN}bash -v script.sh${NC}     - Print script lines as read"
+    echo -e "   • ${CYAN}bash -n script.sh${NC}     - Check syntax only"
     echo
-    echo "2. ${GREEN}In-script debugging:${NC}"
-    echo "   • ${CYAN}set -x${NC}               - Enable debug mode"
-    echo "   • ${CYAN}set +x${NC}               - Disable debug mode"
-    echo "   • ${CYAN}set -e${NC}               - Exit on error"
-    echo "   • ${CYAN}set -u${NC}               - Exit on undefined variable"
-    echo "   • ${CYAN}set -o pipefail${NC}      - Exit on pipe failure"
+    echo -e "2. ${GREEN}In-script debugging:${NC}"
+    echo -e "   • ${CYAN}set -x${NC}               - Enable debug mode"
+    echo -e "   • ${CYAN}set +x${NC}               - Disable debug mode"
+    echo -e "   • ${CYAN}set -e${NC}               - Exit on error"
+    echo -e "   • ${CYAN}set -u${NC}               - Exit on undefined variable"
+    echo -e "   • ${CYAN}set -o pipefail${NC}      - Exit on pipe failure"
     echo
-    echo "3. ${GREEN}Debug output:${NC}"
-    echo "   • ${CYAN}echo \"Debug: \$variable\"${NC}"
-    echo "   • ${CYAN}echo \"Debug\" >&2${NC}      - Output to stderr"
-    echo "   • ${CYAN}PS4='+ Line \$LINENO: '${NC} - Customize debug prompt"
+    echo -e "3. ${GREEN}Debug output:${NC}"
+    echo -e "   • ${CYAN}echo \"Debug: \$variable\"${NC}"
+    echo -e "   • ${CYAN}echo \"Debug\" >&2${NC}      - Output to stderr"
+    echo -e "   • ${CYAN}PS4='+ Line \$LINENO: '${NC} - Customize debug prompt"
     echo
-    echo "4. ${GREEN}Trap errors:${NC}"
+    echo -e "4. ${GREEN}Trap errors:${NC}"
     cat << 'EOF'
 trap 'echo "Error on line $LINENO"' ERR
 
@@ -1462,7 +1462,7 @@ debug() {
 # Usage: DEBUG=true ./script.sh
 EOF
     echo
-    echo "5. ${GREEN}Common issues:${NC}"
+    echo -e "5. ${GREEN}Common issues:${NC}"
     echo "   • Spaces in variables - use quotes: \"\$var\""
     echo "   • Undefined variables - use \${var:-default}"
     echo "   • Command substitution - use \$(command) not backticks"
@@ -1525,14 +1525,14 @@ module5_tutorial() {
     echo -e "${BOLD}Tool 1: grep (Global Regular Expression Print)${NC}"
     echo
     echo "Basic usage:"
-    echo "• ${CYAN}grep pattern file${NC}         - Search for pattern"
-    echo "• ${CYAN}grep -i pattern${NC}           - Case insensitive"
-    echo "• ${CYAN}grep -v pattern${NC}           - Invert match"
-    echo "• ${CYAN}grep -n pattern${NC}           - Show line numbers"
-    echo "• ${CYAN}grep -c pattern${NC}           - Count matches"
-    echo "• ${CYAN}grep -r pattern dir${NC}       - Recursive search"
-    echo "• ${CYAN}grep -E 'regex'${NC}           - Extended regex"
-    echo "• ${CYAN}grep -A2 -B2 pattern${NC}      - Show context"
+    echo -e "• ${CYAN}grep pattern file${NC}         - Search for pattern"
+    echo -e "• ${CYAN}grep -i pattern${NC}           - Case insensitive"
+    echo -e "• ${CYAN}grep -v pattern${NC}           - Invert match"
+    echo -e "• ${CYAN}grep -n pattern${NC}           - Show line numbers"
+    echo -e "• ${CYAN}grep -c pattern${NC}           - Count matches"
+    echo -e "• ${CYAN}grep -r pattern dir${NC}       - Recursive search"
+    echo -e "• ${CYAN}grep -E 'regex'${NC}           - Extended regex"
+    echo -e "• ${CYAN}grep -A2 -B2 pattern${NC}      - Show context"
     echo
     read -p "Press Enter to continue..."
     
@@ -1540,36 +1540,36 @@ module5_tutorial() {
     echo -e "${BOLD}Tool 2: sed (Stream Editor)${NC}"
     echo
     echo "Common operations:"
-    echo "• ${CYAN}sed 's/old/new/'${NC}          - Replace first occurrence"
-    echo "• ${CYAN}sed 's/old/new/g'${NC}         - Replace all occurrences"
-    echo "• ${CYAN}sed '3d'${NC}                  - Delete line 3"
-    echo "• ${CYAN}sed '1,5d'${NC}                - Delete lines 1-5"
-    echo "• ${CYAN}sed '/pattern/d'${NC}          - Delete matching lines"
-    echo "• ${CYAN}sed -n '5,10p'${NC}            - Print lines 5-10"
-    echo "• ${CYAN}sed 's/^/prefix/'${NC}         - Add prefix to lines"
-    echo "• ${CYAN}sed -i.bak 's/a/b/'${NC}       - Edit file in-place"
+    echo -e "• ${CYAN}sed 's/old/new/'${NC}          - Replace first occurrence"
+    echo -e "• ${CYAN}sed 's/old/new/g'${NC}         - Replace all occurrences"
+    echo -e "• ${CYAN}sed '3d'${NC}                  - Delete line 3"
+    echo -e "• ${CYAN}sed '1,5d'${NC}                - Delete lines 1-5"
+    echo -e "• ${CYAN}sed '/pattern/d'${NC}          - Delete matching lines"
+    echo -e "• ${CYAN}sed -n '5,10p'${NC}            - Print lines 5-10"
+    echo -e "• ${CYAN}sed 's/^/prefix/'${NC}         - Add prefix to lines"
+    echo -e "• ${CYAN}sed -i.bak 's/a/b/'${NC}       - Edit file in-place"
     echo
     read -p "Press Enter to continue..."
     
     echo
     echo -e "${BOLD}Tool 3: awk (Pattern Processing)${NC}"
     echo
-    echo "Structure: ${CYAN}awk 'pattern { action }'${NC}"
+    echo -e "Structure: ${CYAN}awk 'pattern { action }'${NC}"
     echo
     echo "Examples:"
-    echo "• ${CYAN}awk '{print \$1}'${NC}          - Print first field"
-    echo "• ${CYAN}awk '{print \$NF}'${NC}         - Print last field"
-    echo "• ${CYAN}awk 'NR==5'${NC}               - Print line 5"
-    echo "• ${CYAN}awk '\$3 > 100'${NC}            - Lines where field 3 > 100"
-    echo "• ${CYAN}awk '{sum+=\$1} END {print sum}'${NC} - Sum column"
-    echo "• ${CYAN}awk -F: '{print \$1}'${NC}      - Set field separator"
-    echo "• ${CYAN}awk 'BEGIN{OFS=\",\"} {print \$1,\$2}'${NC} - Output separator"
+    echo -e "• ${CYAN}awk '{print \$1}'${NC}          - Print first field"
+    echo -e "• ${CYAN}awk '{print \$NF}'${NC}         - Print last field"
+    echo -e "• ${CYAN}awk 'NR==5'${NC}               - Print line 5"
+    echo -e "• ${CYAN}awk '\$3 > 100'${NC}            - Lines where field 3 > 100"
+    echo -e "• ${CYAN}awk '{sum+=\$1} END {print sum}'${NC} - Sum column"
+    echo -e "• ${CYAN}awk -F: '{print \$1}'${NC}      - Set field separator"
+    echo -e "• ${CYAN}awk 'BEGIN{OFS=\",\"} {print \$1,\$2}'${NC} - Output separator"
     echo
     echo "Built-in variables:"
-    echo "• ${GREEN}NF${NC}  - Number of fields"
-    echo "• ${GREEN}NR${NC}  - Record number"
-    echo "• ${GREEN}FS${NC}  - Field separator"
-    echo "• ${GREEN}OFS${NC} - Output field separator"
+    echo -e "• ${GREEN}NF${NC}  - Number of fields"
+    echo -e "• ${GREEN}NR${NC}  - Record number"
+    echo -e "• ${GREEN}FS${NC}  - Field separator"
+    echo -e "• ${GREEN}OFS${NC} - Output field separator"
     echo
     read -p "Press Enter to continue..."
     
@@ -1577,25 +1577,25 @@ module5_tutorial() {
     echo -e "${BOLD}Regular Expressions Basics${NC}"
     echo
     echo "Anchors:"
-    echo "• ${CYAN}^${NC}   - Start of line"
-    echo "• ${CYAN}\$${NC}   - End of line"
-    echo "• ${CYAN}\\b${NC}  - Word boundary"
+    echo -e "• ${CYAN}^${NC}   - Start of line"
+    echo -e "• ${CYAN}\$${NC}   - End of line"
+    echo -e "• ${CYAN}\\b${NC}  - Word boundary"
     echo
     echo "Character classes:"
-    echo "• ${CYAN}.${NC}   - Any character"
-    echo "• ${CYAN}[abc]${NC} - Any of a, b, or c"
-    echo "• ${CYAN}[^abc]${NC} - Not a, b, or c"
-    echo "• ${CYAN}[a-z]${NC} - Range a to z"
-    echo "• ${CYAN}\\d${NC}  - Digit [0-9]"
-    echo "• ${CYAN}\\w${NC}  - Word character [a-zA-Z0-9_]"
-    echo "• ${CYAN}\\s${NC}  - Whitespace"
+    echo -e "• ${CYAN}.${NC}   - Any character"
+    echo -e "• ${CYAN}[abc]${NC} - Any of a, b, or c"
+    echo -e "• ${CYAN}[^abc]${NC} - Not a, b, or c"
+    echo -e "• ${CYAN}[a-z]${NC} - Range a to z"
+    echo -e "• ${CYAN}\\d${NC}  - Digit [0-9]"
+    echo -e "• ${CYAN}\\w${NC}  - Word character [a-zA-Z0-9_]"
+    echo -e "• ${CYAN}\\s${NC}  - Whitespace"
     echo
     echo "Quantifiers:"
-    echo "• ${CYAN}*${NC}   - 0 or more"
-    echo "• ${CYAN}+${NC}   - 1 or more"
-    echo "• ${CYAN}?${NC}   - 0 or 1"
-    echo "• ${CYAN}{3}${NC} - Exactly 3"
-    echo "• ${CYAN}{3,5}${NC} - Between 3 and 5"
+    echo -e "• ${CYAN}*${NC}   - 0 or more"
+    echo -e "• ${CYAN}+${NC}   - 1 or more"
+    echo -e "• ${CYAN}?${NC}   - 0 or 1"
+    echo -e "• ${CYAN}{3}${NC} - Exactly 3"
+    echo -e "• ${CYAN}{3,5}${NC} - Between 3 and 5"
     echo
     
     update_progress "module5" 50
@@ -1646,39 +1646,39 @@ EOF
     case $pattern_choice in
         1)
             echo
-            echo "Pattern: ${CYAN}[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}${NC}"
+    echo -e "Pattern: ${CYAN}[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}${NC}"
             echo "Matches:"
             grep -E '[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}' /tmp/regex_test.txt
             ;;
         2)
             echo
-            echo "Pattern: ${CYAN}\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}${NC}"
+    echo -e "Pattern: ${CYAN}\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}${NC}"
             echo "Matches:"
             grep -E '\(?[0-9]{3}\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}' /tmp/regex_test.txt
             ;;
         3)
             echo
-            echo "Pattern: ${CYAN}[0-9]{4}-[0-9]{2}-[0-9]{2}|[0-9]{2}/[0-9]{2}/[0-9]{4}${NC}"
+    echo -e "Pattern: ${CYAN}[0-9]{4}-[0-9]{2}-[0-9]{2}|[0-9]{2}/[0-9]{2}/[0-9]{4}${NC}"
             echo "Matches:"
             grep -E '[0-9]{4}-[0-9]{2}-[0-9]{2}|[0-9]{2}/[0-9]{2}/[0-9]{4}' /tmp/regex_test.txt
             ;;
         4)
             echo
-            echo "Pattern: ${CYAN}([0-9]{1,3}\\.){3}[0-9]{1,3}${NC}"
+    echo -e "Pattern: ${CYAN}([0-9]{1,3}\\.){3}[0-9]{1,3}${NC}"
             echo "Matches:"
             grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' /tmp/regex_test.txt
             echo
-            echo "Valid IPs only: ${CYAN}((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)${NC}"
+    echo -e "Valid IPs only: ${CYAN}((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)${NC}"
             ;;
         5)
             echo
-            echo "Pattern: ${CYAN}https?://[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(/[^[:space:]]*)?${NC}"
+    echo -e "Pattern: ${CYAN}https?://[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(/[^[:space:]]*)?${NC}"
             echo "Matches:"
             grep -E 'https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(/[^[:space:]]*)?' /tmp/regex_test.txt
             ;;
         6)
             echo
-            echo "Pattern: ${CYAN}[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}${NC}"
+    echo -e "Pattern: ${CYAN}[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}${NC}"
             echo "Matches:"
             grep -E '[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}[- ]?[0-9]{4}' /tmp/regex_test.txt
             ;;
@@ -1825,13 +1825,13 @@ module6_sysadmin() {
     echo
     
     echo -e "${BOLD}Key Commands:${NC}"
-    echo "• ${CYAN}useradd, usermod, passwd${NC} - User management"
-    echo "• ${CYAN}systemctl, service${NC} - Service control"
-    echo "• ${CYAN}apt, yum, dnf${NC} - Package managers"
-    echo "• ${CYAN}journalctl, dmesg${NC} - System logs"
-    echo "• ${CYAN}fdisk, mount, df, du${NC} - Disk management"
-    echo "• ${CYAN}tar, rsync${NC} - Backup tools"
-    echo "• ${CYAN}iptables, ufw${NC} - Firewall"
+    echo -e "• ${CYAN}useradd, usermod, passwd${NC} - User management"
+    echo -e "• ${CYAN}systemctl, service${NC} - Service control"
+    echo -e "• ${CYAN}apt, yum, dnf${NC} - Package managers"
+    echo -e "• ${CYAN}journalctl, dmesg${NC} - System logs"
+    echo -e "• ${CYAN}fdisk, mount, df, du${NC} - Disk management"
+    echo -e "• ${CYAN}tar, rsync${NC} - Backup tools"
+    echo -e "• ${CYAN}iptables, ufw${NC} - Firewall"
     echo
     
     update_progress "module6" 25
@@ -1856,13 +1856,13 @@ module7_networking() {
     echo
     
     echo -e "${BOLD}Essential Commands:${NC}"
-    echo "• ${CYAN}ifconfig, ip${NC} - Network interface configuration"
-    echo "• ${CYAN}ping, traceroute${NC} - Connectivity testing"
-    echo "• ${CYAN}netstat, ss${NC} - Network statistics"
-    echo "• ${CYAN}nslookup, dig${NC} - DNS queries"
-    echo "• ${CYAN}ssh, scp, sftp${NC} - Secure connections"
-    echo "• ${CYAN}curl, wget${NC} - HTTP/HTTPS tools"
-    echo "• ${CYAN}tcpdump, wireshark${NC} - Packet analysis"
+    echo -e "• ${CYAN}ifconfig, ip${NC} - Network interface configuration"
+    echo -e "• ${CYAN}ping, traceroute${NC} - Connectivity testing"
+    echo -e "• ${CYAN}netstat, ss${NC} - Network statistics"
+    echo -e "• ${CYAN}nslookup, dig${NC} - DNS queries"
+    echo -e "• ${CYAN}ssh, scp, sftp${NC} - Secure connections"
+    echo -e "• ${CYAN}curl, wget${NC} - HTTP/HTTPS tools"
+    echo -e "• ${CYAN}tcpdump, wireshark${NC} - Packet analysis"
     echo
     
     update_progress "module7" 25
@@ -1888,12 +1888,12 @@ module8_advanced() {
     echo
     
     echo -e "${BOLD}Advanced Tools:${NC}"
-    echo "• ${CYAN}strace, ltrace${NC} - System call tracing"
-    echo "• ${CYAN}perf, oprofile${NC} - Performance analysis"
-    echo "• ${CYAN}docker, kubectl${NC} - Container management"
-    echo "• ${CYAN}ansible-playbook${NC} - Automation"
-    echo "• ${CYAN}git${NC} - Version control"
-    echo "• ${CYAN}tmux, screen${NC} - Terminal multiplexers"
+    echo -e "• ${CYAN}strace, ltrace${NC} - System call tracing"
+    echo -e "• ${CYAN}perf, oprofile${NC} - Performance analysis"
+    echo -e "• ${CYAN}docker, kubectl${NC} - Container management"
+    echo -e "• ${CYAN}ansible-playbook${NC} - Automation"
+    echo -e "• ${CYAN}git${NC} - Version control"
+    echo -e "• ${CYAN}tmux, screen${NC} - Terminal multiplexers"
     echo
     
     update_progress "module8" 25
