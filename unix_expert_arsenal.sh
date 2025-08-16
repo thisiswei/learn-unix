@@ -733,6 +733,202 @@ oneliner_hall() {
     echo -e "${CYAN}# Monitor failed SSH attempts${NC}"
     echo "journalctl -u sshd | grep 'Failed password' | awk '{print \$(NF-3)}' | sort | uniq -c | sort -rn"
     echo
+    echo -e "${CYAN}# Generate strong random password${NC}"
+    echo "openssl rand -base64 32 | tr -d '=' | cut -c1-24"
+    echo
+    echo -e "${CYAN}# Check which ports are listening${NC}"
+    echo "ss -tulpn | grep LISTEN | awk '{print \$5}' | sed 's/.*://' | sort -n | uniq"
+    echo
+    
+    echo -e "${BOLD}Git Magic${NC}"
+    echo
+    echo -e "${CYAN}# Find and delete all merged branches${NC}"
+    echo "git branch --merged | grep -v '\\*\\|master\\|main' | xargs -n 1 git branch -d"
+    echo
+    echo -e "${CYAN}# Show files changed in last N commits${NC}"
+    echo "git log --name-only --oneline -10 | grep -v '^[a-f0-9]' | sort | uniq -c | sort -rn"
+    echo
+    echo -e "${CYAN}# Find large files in git history${NC}"
+    echo "git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sed -n 's/^blob //p' | sort -nk2 | tail -10 | cut -c 1-12,41- | numfmt --field=2 --to=iec"
+    echo
+    
+    echo -e "${BOLD}Performance Debugging${NC}"
+    echo
+    echo -e "${CYAN}# Find files being accessed in real-time${NC}"
+    echo "lsof -r 1 | grep REG | grep -v '\\(deleted\\)' | awk '{print \$NF}' | sort | uniq -c | sort -rn | head"
+    echo
+    echo -e "${CYAN}# Show threads of a process tree${NC}"
+    echo "ps -eLf --forest | grep -A20 -B5 process_name"
+    echo
+    echo -e "${CYAN}# Track memory usage over time${NC}"
+    echo "while true; do ps aux | awk '{sum+=\$6} END {print strftime(\"%Y-%m-%d %H:%M:%S\"), sum/1024 \" MB\"}'; sleep 60; done"
+    echo
+    
+    echo -e "${BOLD}Text Processing Wizardry${NC}"
+    echo
+    echo -e "${CYAN}# Extract URLs from any file${NC}"
+    echo "grep -oP 'https?://[^\\s]+' file | sort | uniq"
+    echo
+    echo -e "${CYAN}# Remove duplicate lines while preserving order${NC}"
+    echo "awk '!seen[\$0]++' file"
+    echo
+    echo -e "${CYAN}# Convert multiline output to single line CSV${NC}"
+    echo "paste -sd, -"
+    echo
+    echo -e "${CYAN}# Print lines between two patterns (inclusive)${NC}"
+    echo "sed -n '/START/,/END/p' file"
+    echo
+    echo -e "${CYAN}# Replace newlines with spaces except last${NC}"
+    echo "tr '\\n' ' ' < file | sed 's/ \$/\\n/'"
+    echo
+    
+    echo -e "${BOLD}Container Operations${NC}"
+    echo
+    echo -e "${CYAN}# Clean up all Docker resources${NC}"
+    echo "docker system prune -a --volumes -f"
+    echo
+    echo -e "${CYAN}# Get shell in running container as root${NC}"
+    echo "docker exec -u 0 -it container_name /bin/bash"
+    echo
+    echo -e "${CYAN}# Copy files between containers${NC}"
+    echo "docker cp \$(docker create --rm container1):/source/path - | docker cp - container2:/dest/path"
+    echo
+    echo -e "${CYAN}# Monitor resource usage of all containers${NC}"
+    echo "docker stats --no-stream --format 'table {{.Container}}\\t{{.CPUPerc}}\\t{{.MemUsage}}\\t{{.NetIO}}'"
+    echo
+    
+    echo -e "${BOLD}Database Operations${NC}"
+    echo
+    echo -e "${CYAN}# Backup MySQL database with compression${NC}"
+    echo "mysqldump -u user -p database | gzip -9 > backup_\$(date +%Y%m%d_%H%M%S).sql.gz"
+    echo
+    echo -e "${CYAN}# Find slow queries in PostgreSQL${NC}"
+    echo "psql -c \"SELECT query, calls, total_time, mean_time FROM pg_stat_statements ORDER BY mean_time DESC LIMIT 10;\""
+    echo
+    echo -e "${CYAN}# Redis monitor commands in real-time${NC}"
+    echo "redis-cli monitor | grep -v '\"PING\"\\|\"INFO\"' | cut -d' ' -f3- | sed 's/\"//g'"
+    echo
+    
+    echo -e "${BOLD}Archive & Compression${NC}"
+    echo
+    echo -e "${CYAN}# Create encrypted tar archive${NC}"
+    echo "tar czf - directory/ | openssl enc -aes-256-cbc -salt -out archive.tar.gz.enc"
+    echo
+    echo -e "${CYAN}# Extract specific files from tar without extracting all${NC}"
+    echo "tar -xzf archive.tar.gz --wildcards '*.txt' --no-anchored"
+    echo
+    echo -e "${CYAN}# Compare contents of two archives without extracting${NC}"
+    echo "diff <(tar -tzf archive1.tar.gz | sort) <(tar -tzf archive2.tar.gz | sort)"
+    echo
+    
+    echo -e "${BOLD}System Rescue${NC}"
+    echo
+    echo -e "${CYAN}# Find and kill zombie processes${NC}"
+    echo "ps aux | awk '\$8 ~ /^Z/ { print \$2 }' | xargs -r kill -9"
+    echo
+    echo -e "${CYAN}# Emergency sync and reboot${NC}"
+    echo "echo 1 > /proc/sys/kernel/sysrq && echo s > /proc/sysrq-trigger && echo u > /proc/sysrq-trigger && echo b > /proc/sysrq-trigger"
+    echo
+    echo -e "${CYAN}# Recover deleted but still open files${NC}"
+    echo "lsof | grep deleted | awk '{print \$2}' | xargs -I{} cp /proc/{}/fd/1 recovered_file"
+    echo
+    
+    echo -e "${BOLD}Time & Date Magic${NC}"
+    echo
+    echo -e "${CYAN}# Convert epoch to human readable in different timezones${NC}"
+    echo "TZ=America/New_York date -d @1234567890; TZ=UTC date -d @1234567890; TZ=Asia/Tokyo date -d @1234567890"
+    echo
+    echo -e "${CYAN}# Calculate days between two dates${NC}"
+    echo "echo \$(( (\$(date -d '2024-12-31' +%s) - \$(date -d '2024-01-01' +%s)) / 86400 )) days"
+    echo
+    echo -e "${CYAN}# Show calendar for entire year with week numbers${NC}"
+    echo "ncal -w -y 2024"
+    echo
+    
+    echo -e "${BOLD}Advanced Networking${NC}"
+    echo
+    echo -e "${CYAN}# Test bandwidth between two hosts${NC}"
+    echo "iperf3 -c server_ip -t 30 -P 4 -i 1"
+    echo
+    echo -e "${CYAN}# Scan network for active hosts${NC}"
+    echo "nmap -sn 192.168.1.0/24 | grep 'Nmap scan report' | awk '{print \$NF}'"
+    echo
+    echo -e "${CYAN}# Monitor DNS queries in real-time${NC}"
+    echo "tcpdump -i any -n port 53 2>/dev/null | grep -oE '([0-9]{1,3}\\.){3}[0-9]{1,3}\\.[0-9]+ > ([0-9]{1,3}\\.){3}[0-9]{1,3}\\.[0-9]+: [0-9]+ A\\? [^ ]+' | awk '{print \$7}'"
+    echo
+    echo -e "${CYAN}# Find all SSL certificates expiry dates${NC}"
+    echo "find /etc -name '*.crt' -o -name '*.pem' 2>/dev/null | xargs -I{} sh -c 'echo -n \"{}: \"; openssl x509 -in {} -noout -enddate 2>/dev/null'"
+    echo
+    
+    echo -e "${BOLD}Bash Tricks${NC}"
+    echo
+    echo -e "${CYAN}# Run command repeatedly until it succeeds${NC}"
+    echo "until command_that_might_fail; do echo 'Retrying...'; sleep 1; done"
+    echo
+    echo -e "${CYAN}# Create backup of file before editing${NC}"
+    echo "cp file{,.bak.\$(date +%Y%m%d_%H%M%S)} && vim file"
+    echo
+    echo -e "${CYAN}# Execute command for each line in file${NC}"
+    echo "while IFS= read -r line; do command \"\$line\"; done < file"
+    echo
+    echo -e "${CYAN}# Generate sequence with padding${NC}"
+    echo "printf '%03d\\n' {1..100}"
+    echo
+    
+    echo -e "${BOLD}Resource Monitoring${NC}"
+    echo
+    echo -e "${CYAN}# Show top files by disk usage in current directory${NC}"
+    echo "find . -type f -printf '%s %p\\n' | sort -rn | head -20 | numfmt --field=1 --to=iec"
+    echo
+    echo -e "${CYAN}# Monitor CPU temperature${NC}"
+    echo "watch -n 1 'sensors | grep Core | sed \"s/Core [0-9]://g\"'"
+    echo
+    echo -e "${CYAN}# Show memory usage by process name${NC}"
+    echo "ps aux | awk '{arr[\$11]+=\$6} END {for (i in arr) {print arr[i]/1024 \" MB\", i}}' | sort -rn | head"
+    echo
+    
+    echo -e "${BOLD}Development & Debugging${NC}"
+    echo
+    echo -e "${CYAN}# Find TODO/FIXME comments in codebase${NC}"
+    echo "grep -rn --include='*.{js,py,java,cpp,go}' -E 'TODO|FIXME|HACK|XXX' . | sed 's/:/ /' | awk '{printf \"%-50s %s\\n\", \$1\":\" \$2, substr(\$0, index(\$0,\$3))}'"
+    echo
+    echo -e "${CYAN}# Count lines of code by language${NC}"
+    echo "find . -type f -name '*.py' -o -name '*.js' -o -name '*.java' | xargs wc -l | tail -1"
+    echo
+    echo -e "${CYAN}# Watch file for changes and run command${NC}"
+    echo "while inotifywait -e close_write file.txt; do command; done"
+    echo
+    
+    echo -e "${BOLD}Package Management${NC}"
+    echo
+    echo -e "${CYAN}# List all manually installed packages (Debian/Ubuntu)${NC}"
+    echo "comm -23 <(apt-mark showmanual | sort) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort)"
+    echo
+    echo -e "${CYAN}# Find which package provides a file${NC}"
+    echo "dpkg -S /path/to/file  # Debian/Ubuntu"
+    echo "rpm -qf /path/to/file  # RedHat/CentOS"
+    echo
+    echo -e "${CYAN}# Show package dependencies tree${NC}"
+    echo "apt-rdepends --state-follow=Installed --state-show=Installed package_name 2>/dev/null | grep -v '^ '"
+    echo
+    
+    echo -e "${BOLD}Fun & Useful${NC}"
+    echo
+    echo -e "${CYAN}# Create ASCII art banner${NC}"
+    echo "figlet -f slant 'Hello World' | lolcat"
+    echo
+    echo -e "${CYAN}# Matrix-like display${NC}"
+    echo "cmatrix -b -C green"
+    echo
+    echo -e "${CYAN}# Weather in terminal${NC}"
+    echo "curl -s 'wttr.in/London?format=3'"
+    echo
+    echo -e "${CYAN}# Display phase of the moon${NC}"
+    echo "curl -s 'wttr.in/Moon'"
+    echo
+    echo -e "${CYAN}# Generate QR code in terminal${NC}"
+    echo "qrencode -t UTF8 'https://example.com'"
+    echo
     
     read -p "Press Enter to return to menu..."
     main_menu
